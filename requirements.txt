@@ -1,5 +1,4 @@
 async-timeout
 discord.py
 PyNaCl
-random
 youtube-dl
