@@ -1,3 +1,8 @@
 async-timeout
+colorLog
 discord.py
+ffmpeg
+pip
+PyNaCl
+python-dotenv
 youtube-dl
