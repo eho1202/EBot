@@ -5,4 +5,5 @@ ffmpeg
 pip
 PyNaCl
 python-dotenv
+python-ffmpeg
 youtube-dl
