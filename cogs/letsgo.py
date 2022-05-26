@@ -6,6 +6,8 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+words = ['lets go', 'let\'s go', 'LETS GO', 'LET\'S GO']
+
 class letsgo(commands.Cog):
     def __init__(self, client):
         self.client=client
@@ -22,11 +24,9 @@ class letsgo(commands.Cog):
       
     @commands.Cog.listener()
     async def on_message(self, message):
-        messageContent = message.content.lower()
         img = self.image_names[random.randint(0, len(self.image_names) - 1)]
-
-        if not message.author.bot:
-            if 'lets go' or 'let\'s go' in messageContent:
+        for word in words:
+            if word in message.content:
                 await message.reply('Let\'s GOOOOOO', file=discord.File(img), mention_author=False)
        
 def setup(client):
