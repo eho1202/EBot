@@ -25,8 +25,9 @@ class letsgo(commands.Cog):
         messageContent = message.content.lower()
         img = self.image_names[random.randint(0, len(self.image_names) - 1)]
 
-        if 'lets go' in messageContent or 'let\'s go' in message.content:
-            await message.reply('Let\'s GOOOOOO', file=discord.File(img), mention_author=False)
+        if not message.author.bot:
+            if 'lets go' or 'let\'s go' in messageContent:
+                await message.reply('Let\'s GOOOOOO', file=discord.File(img), mention_author=False)
        
 def setup(client):
     client.add_cog(letsgo(client))
